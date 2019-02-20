@@ -219,4 +219,13 @@ public class CountryList {
         return filteredCountry;
     }
 
+    public Country findOneCountry(Checker tester){
+        for(Country c : countryList){
+            if(tester.test(c)){
+                return c;
+            }
+        }
+        return null;
+    }
+
 }
