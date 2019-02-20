@@ -21,7 +21,7 @@ public class NamesController {
     @RequestMapping("/begin")
     public ArrayList<Country> getAllBeginWith(
             @RequestParam(value = "letter") String firstLetter){
-        return DemoApplication.countryList.findCountry(c -> String.valueOf(c.getName().charAt(0)).equals("A"));
+        return DemoApplication.countryList.findCountry(c -> String.valueOf(c.getName().charAt(0)).equals(firstLetter.toUpperCase()));
 
     }
 }
