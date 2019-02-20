@@ -9,6 +9,7 @@ public class DemoApplication {
     public static void main(String[] args) {
         System.out.println();
         countryList = new CountryList();
+        countryList.addCountries();
         SpringApplication.run(DemoApplication.class, args);
     }
 

@@ -3,9 +3,9 @@ package com.coutries.demo;
 import java.util.ArrayList;
 
 public class CountryList {
-    public ArrayList<Country> countryList = new ArrayList<Country>();
+    public ArrayList<Country> countryList = new ArrayList<>();
 
-    public CountryList(){
+    public void addCountries(){
         countryList.add(new Country("China",1420062022,9388211,39));
         countryList.add(new Country("India",1368737513,2973190,28));
         countryList.add(new Country("U.S.",329093110,9147420,38));
@@ -209,13 +209,14 @@ public class CountryList {
         countryList.add(new Country("Seychelles",95702,460,36));
     }
 
-    public Country findCountry(Checker tester){
+    public ArrayList<Country> findCountry(Checker tester){
+        ArrayList<Country> filteredCountry =  new ArrayList<>();
         for(Country c : countryList){
             if(tester.test(c)){
-                return c;
+                filteredCountry.add(c);
             }
         }
-        return null;
+        return filteredCountry;
     }
 
 }
